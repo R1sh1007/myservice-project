@@ -1,4 +1,4 @@
-# Microservices Authentication System
+<img width="1536" height="1024" alt="auth_service_overview" src="https://github.com/user-attachments/assets/056f66f8-983b-4a29-8a14-9517b373bd59" /># Microservices Authentication System
 
 This project is a Spring Boot based microservices application.  
 The main purpose of this project is to understand and implement a real-world authentication and authorization flow using JWT, API Gateway, and independent services.
@@ -82,5 +82,15 @@ This project is created to practice production-level microservice concepts:
 More services and improvements will be added as the project grows.
 
 
+## System Architecture
 
-POST
+![Architecture](docs/images/microservicearchitecture.png)
+
+
+![Wroking](docs/images/MyMicroserviceWork.png)
+
+![JWT Flow](docs/images/auth_service_overview.png)
+
+
+
+
