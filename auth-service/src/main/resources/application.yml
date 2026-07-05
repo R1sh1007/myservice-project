@@ -1,0 +1,110 @@
+server:
+  port: 8084
+
+
+spring:
+
+  application:
+    name: AUTH-SERVICE
+
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_db
+    username: postgres
+    password: rishi
+    driver-class-name: org.postgresql.Driver
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        default_schema: auth_schema
+        format_sql: true
+
+
+  flyway:
+    enabled: false
+    schemas: auth_schema
+    baseline-on-migrate: true
+
+
+
+jwt:
+  secret: rishimicrolearningservice2026ForJWT2024MustBe256BitsLongAtLeast!
+  access-expiration: 900000
+  refresh-expiration: 604800000
+
+
+
+eureka:
+
+  client:
+
+    register-with-eureka: true
+    fetch-registry: true
+
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+  instance:
+    prefer-ip-address: true
+
+
+
+management:
+
+  endpoints:
+
+    web:
+
+      exposure:
+
+        include:
+
+          - health
+          - info
+          - metrics
+          - prometheus
+
+
+  endpoint:
+
+    health:
+
+      show-details: always
+
+
+  tracing:
+
+    enabled: false
+
+    sampling:
+
+      probability: 1.0
+
+
+
+logging:
+
+  level:
+
+    root: INFO
+
+    microservice: DEBUG
+
+    org.hibernate.SQL: DEBUG
+
+    org.hibernate.orm.jdbc.bind: TRACE
+
+
+  pattern:
+
+    console:
+
+      "%d %-5level %logger : %msg%n"
